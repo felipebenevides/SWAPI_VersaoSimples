@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
-namespace StarWarsAPI.Models
+namespace SWAPI.Models
 {
     [DataContract]
-  public class Json
+    public class Json
     {
         [DataMember]
         public List<People> results { get; set; }

@@ -5,7 +5,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using StarWarsAPI.Models;
+using SWAPI.Models;
+using SWAPI.ViewModels;
 
 namespace SWAPI.Controllers
 {
@@ -29,5 +30,41 @@ namespace SWAPI.Controllers
 
             return personagens.results;
         }
+
+        //2º EndPoint
+        [HttpGet("{id}")]
+        public async Task<PeopleFilm> ObterPersonagensPorId(int id)
+        {
+            PeopleFilm people = null;
+            List<string> films = new List<string>();
+
+            var httpClient = new HttpClient();
+            HttpResponseMessage response = await httpClient.GetAsync("https://swapi.co/api/people/" + id);
+            if (response.IsSuccessStatusCode)
+            {
+                var stringResult = await response.Content.ReadAsStringAsync();
+                people = JsonConvert.DeserializeObject<PeopleFilm>(stringResult);
+
+            }
+
+            for (int i = 0; i < people.films.Length; i++)
+            {
+                response.Dispose();
+                response = await httpClient.GetAsync(people.films[i]);
+                if (response.IsSuccessStatusCode)
+                {
+                    var stringResult = await response.Content.ReadAsStringAsync();
+                    var film = JsonConvert.DeserializeObject<Film>(stringResult);
+
+                    films.Add(film.title);
+
+                }
+            }
+
+            people.filmslist = films;
+
+            return people;
+        }
+
     }
 }

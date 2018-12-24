@@ -1,18 +1,14 @@
-﻿using SharpTrooper.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Threading.Tasks;
 
-namespace StarWarsAPI.Models
+namespace SWAPI.Models
 {
     [DataContract]
-    public class People 
+    public class People
     {
         public List<People> ListaPessoas { get; set; }
         [DataMember]
-        public string name { get; set;}
+        public string name { get; set; }
         [DataMember]
         string birth_year { get; set; }
         [DataMember]
@@ -68,7 +64,7 @@ namespace StarWarsAPI.Models
         //    public Name name { get; set; }
         //    public Url url { get; set; }
         //    public Height height { get; set; }
-        
+
         //    public Mass mass { get; set; }
         //    public Edited edited { get; set; }
         //    public Homeworld homeworld { get; set; }
@@ -137,7 +133,7 @@ namespace StarWarsAPI.Models
         //    public string description { get; set; }
         //    public string type { get; set; }
         //}
-        
+
 
         //public class Mass
         //{

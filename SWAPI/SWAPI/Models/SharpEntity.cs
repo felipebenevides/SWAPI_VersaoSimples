@@ -1,4 +1,4 @@
-﻿namespace SharpTrooper.Entities
+﻿namespace SWAPI.Models
 {
     public abstract class SharpEntity
     {

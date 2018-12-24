@@ -1,31 +1,14 @@
-﻿using StarWarsAPI.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace SharpTrooper.Entities
+namespace SWAPI.Models
 {
-    /// <summary>
-    /// A Star Wars film
-    /// </summary>
-    /// 
-
     [DataContract]
-    public class Film : SharpEntity
+    public class Film 
     {
-        /// <summary>
-        /// The episode number of this film.
-        /// </summary>
-        /// 
         [DataMember]
-        public short episode_id
-        {
-            get;
-            set;
-        }
+        public short episode_id { get; set;}
 
-        /// <summary>
-        /// The vehicle resources featured within this film.
-        /// </summary>
         [DataMember]
         public string[] vehicles
         {
@@ -33,10 +16,6 @@ namespace SharpTrooper.Entities
             set;
         }
 
-        /// <summary>
-        /// The url of this resource
-        /// </summary>
-        /// 
         [DataMember]
         public string url
         {
@@ -44,10 +23,7 @@ namespace SharpTrooper.Entities
             set;
         }
 
-        /// <summary>
-        /// An array of starship resources that this person has piloted
-        /// </summary>
-        /// 
+
         [DataMember]
         public string[] starships
         {
@@ -55,10 +31,6 @@ namespace SharpTrooper.Entities
             set;
         }
 
-        /// <summary>
-        /// The title of this film.
-        /// </summary>
-        /// 
         [DataMember]
         public string title
         {
@@ -66,10 +38,6 @@ namespace SharpTrooper.Entities
             set;
         }
 
-        /// <summary>
-        /// The url of the species resource that this person is.
-        /// </summary>
-        /// 
         [DataMember]
         public string[] species
         {
@@ -77,10 +45,6 @@ namespace SharpTrooper.Entities
             set;
         }
 
-        /// <summary>
-        /// The producer(s) of this film.
-        /// </summary>
-        /// 
         [DataMember]
         public string producer
         {
@@ -88,10 +52,6 @@ namespace SharpTrooper.Entities
             set;
         }
 
-        /// <summary>
-        /// The planet resources featured within this film.
-        /// </summary>
-        /// 
         [DataMember]
         public string[] planets
         {
@@ -99,10 +59,6 @@ namespace SharpTrooper.Entities
             set;
         }
 
-        /// <summary>
-        /// The director of this film.
-        /// </summary>
-        /// 
         [DataMember]
         public string director
         {
@@ -110,10 +66,6 @@ namespace SharpTrooper.Entities
             set;
         }
 
-        /// <summary>
-        /// The people resources featured within this film.
-        /// </summary>
-        /// 
         [DataMember]
         public string[] characters
         {
