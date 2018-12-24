@@ -6,9 +6,6 @@ namespace SWAPI.Models
     [DataContract]
     public class People
     {
-        public List<People> ListaPessoas { get; set; }
-        [DataMember]
-        public List<Specie> ListaEspecies { get; set; }
         [DataMember]
         public string name { get; set; }
         [DataMember]

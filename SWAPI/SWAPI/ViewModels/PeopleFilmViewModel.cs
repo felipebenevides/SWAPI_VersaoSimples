@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SWAPI.ViewModels
 {
     [DataContract]
-    public class PeopleFilm
+    public class PeopleFilmViewModel
     {
             [DataMember]
             public string name { get; set; }
