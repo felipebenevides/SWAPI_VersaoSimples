@@ -1,5 +1,4 @@
 ﻿using SharpTrooper.Entities;
-using StarWarsAPI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
