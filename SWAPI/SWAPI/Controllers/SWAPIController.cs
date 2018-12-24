@@ -66,5 +66,30 @@ namespace SWAPI.Controllers
             return people;
         }
 
+        //3 Endpoint
+
+        [HttpGet]
+        public async Task<List<People>> ObterPersonagensHumano()
+        {
+            Json personagens = null;
+            var httpClient = new HttpClient();
+            HttpResponseMessage response = await httpClient.GetAsync("https://swapi.co/api/people/");
+            if (response.IsSuccessStatusCode)
+            {
+                var stringResult = await response.Content.ReadAsStringAsync();
+                personagens = JsonConvert.DeserializeObject<Json>(stringResult);
+            }
+
+            personagens.results = personagens.results.Where(w => w.gender == "Male" || w.gender == "Female").ToList();
+
+            var ContaPersonagens = personagens.results.Count();
+
+            var ContaMassa = personagens.results.Select(s => s.mass).Count();
+
+            var Media = ContaPersonagens / ContaMassa;
+
+            return personagens.results;
+        }
+
     }
 }

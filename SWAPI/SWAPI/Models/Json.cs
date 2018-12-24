@@ -8,5 +8,8 @@ namespace SWAPI.Models
     {
         [DataMember]
         public List<People> results { get; set; }
+
+        [DataMember]
+        public List<Specie> species { get;set; }
     }
 }
