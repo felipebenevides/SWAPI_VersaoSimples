@@ -1,2 +1,2 @@
 # SWAPI_VersaoSimples
-Consumindo de forma simples
+Consumindo API DO STAR WARS de forma simples
